@@ -308,6 +308,24 @@ def problem0c(circle, n, window):
     ####################################################################
     # ------------------------------------------------------------------
 
+    circle.attach_to(window)
+
+    x = circle.center.x + (2 * circle.radius)
+    y = circle.center.y
+
+    for k in range(n):
+
+        center = rg.Point(x,y)
+
+        circle1 = rg.Circle(center, circle.radius)
+
+
+        x = x + (circle.radius * 2)
+
+
+
+
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
