@@ -151,6 +151,7 @@ def problem3a(window, point, n):
     line.attach_to(window)
 
     thick = 1
+    total = 1
 
     for k in range(n-1):
         point.x = point.x + 20
@@ -159,18 +160,21 @@ def problem3a(window, point, n):
         line1 = rg.Line(point, point_end)
         thick = thick + 2
 
+
         if thick < 13:
             line1.thickness = thick
 
         else:
             line1.thickness = 13
 
+        total = total + line1.thickness
+
 
         line1.attach_to(window)
 
-
-
     window.render()
+
+    return total
 
 
 
