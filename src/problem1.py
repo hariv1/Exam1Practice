@@ -374,6 +374,17 @@ def problem1c(n):
     #    TIME ESTIMATE:   15 to 20 minutes.
     # ------------------------------------------------------------------
 
+    total = 1
+
+    start = 2
+    end = n
+
+    for k in range(end-start+1):
+        if is_prime(k + start):
+            total = total * (k+start)
+
+    return sum_of_digits(total)
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
