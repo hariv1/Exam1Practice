@@ -202,16 +202,16 @@ def problem2b(rect, n, delta, win):
 
     rect.attach_to(win)
 
-    startx = rect.get_upper_left_corner().x -delta
-    starty = rect.get_upper_left_corner().y - delta
+    startx = rect.get_upper_left_corner().x
+    starty = rect.get_upper_left_corner().y
     start = rg.Point(startx,starty)
 
-    endx = rect.get_lower_right_corner().x +delta
-    endy = rect.get_lower_right_corner().y +delta
+    endx = rect.get_lower_right_corner().x
+    endy = rect.get_lower_right_corner().y
     end = rg.Point(endx,endy)
 
     increment_x = rect.get_lower_right_corner().x + delta
-    for _ in range(n-1):
+    for _ in range(n):
         rect1 = rg.Rectangle(start,end)
         rect1.attach_to(win)
         win.render()
