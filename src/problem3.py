@@ -146,6 +146,33 @@ def problem3a(window, point, n):
     #    TIME ESTIMATE:   20 to 35 minutes.
     # ------------------------------------------------------------------
 
+    point_end = rg.Point(point.x, point.y + 50)
+    line = rg.Line(point, point_end)
+    line.attach_to(window)
+
+    thick = 1
+
+    for k in range(n-1):
+        point.x = point.x + 20
+        point.y = point.y + 10
+        point_end = rg.Point(point.x, point.y + 50)
+        line1 = rg.Line(point, point_end)
+        thick = thick + 2
+
+        if thick < 13:
+            line1.thickness = thick
+
+        else:
+            line1.thickness = 13
+
+
+        line1.attach_to(window)
+
+
+
+    window.render()
+
+
 
 def run_test_problem3b():
     """ Tests the   problem3b   function. """
