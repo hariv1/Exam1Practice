@@ -260,6 +260,27 @@ def problem3b(m, point1):
     #    TIME ESTIMATE:   20 to 30 minutes.
     # ------------------------------------------------------------------
 
+    window = rg.RoseWindow(400,650)
+    point2 = rg.Point(point1.x,point1.y)
+
+    total = 0
+
+
+    for k in range(m):
+        answer = problem3a(window,point1,3+ 2*k)
+        total = total + answer
+        point1.x = point2.x
+        point1.y = point2.y + (60* (k+1))
+
+
+
+    window.close_on_mouse_click()
+
+    return total
+
+
+
+
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
