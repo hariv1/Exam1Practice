@@ -3,7 +3,7 @@ PRACTICE Test 1, problem 1.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
          their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -124,6 +124,20 @@ def run_test_problem1a():
     # TO DO: 2 (continued).
     # Below this comment, add 2 more test cases of your own choosing.
     # ------------------------------------------------------------------
+
+    # Test 3:
+    expected = 0.063321  # This is APPROXIMATELY the correct answer.
+    answer = problem1a(2, 3)
+    print()
+    print('Test 3 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
+
+    # Test 4:
+    expected = 0.462244968  # This is APPROXIMATELY the correct answer.
+    answer = problem1a(5, 6)
+    print()
+    print('Test 4 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
 
 
 def problem1a(m, n):
