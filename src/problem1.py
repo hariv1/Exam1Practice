@@ -204,31 +204,31 @@ def run_test_problem1b():
     print('--------------------------------------------------')
 
     # Test 1:
-    expected = 5  # This is APPROXIMATELY the correct answer.
-    answer = problem1a(3, 5)
+    expected = 5
+    answer = problem1b(3, 5)
     print()
-    print('Test 1 expected:', expected, '(approximately)')
+    print('Test 1 expected:', expected)
     print('       actual:  ', answer)
 
     # Test 2:
-    expected = 1  # This is APPROXIMATELY the correct answer.
-    answer = problem1a(2, 1)
+    expected = 1
+    answer = problem1b(2, 1)
     print()
-    print('Test 2 expected:', expected, '(approximately)')
+    print('Test 2 expected:', expected)
     print('       actual:  ', answer)
 
     # Test 3:
-    expected = 44  # This is APPROXIMATELY the correct answer.
-    answer = problem1a(5, 40)
+    expected = 44
+    answer = problem1b(5, 40)
     print()
-    print('Test 3 expected:', expected, '(approximately)')
+    print('Test 3 expected:', expected)
     print('       actual:  ', answer)
 
     # Test 4:
-    expected = 2  # This is APPROXIMATELY the correct answer.
-    answer = problem1a(5, 2)
+    expected = 2
+    answer = problem1b(5, 2)
     print()
-    print('Test 4 expected:', expected, '(approximately)')
+    print('Test 4 expected:', expected)
     print('       actual:  ', answer)
 
 
@@ -262,6 +262,19 @@ def problem1b(m, f):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 to 15 minutes.
     # ------------------------------------------------------------------
+
+    start = m
+    end = f * m
+
+    total = 0
+
+    for k in range(end-start+1):
+        if is_prime(k+start):
+            total = total + 1
+
+    return total
+
+
 
 
 def run_test_problem1c():
