@@ -113,20 +113,17 @@ def problem2a(circle, rectangle, window):
 
     circle.attach_to(window)
     rectangle.attach_to(window)
-
     window.render()
-    window.get_next_mouse_click()
+    window.continue_on_mouse_click()
 
-
-    line = rg.Line(rectangle.get_upper_right_corner(), rectangle.get_lower_left_corner())
+    line = rg.Line(rectangle.get_upper_right_corner(),rectangle.get_lower_left_corner())
     line.arrow = 'last'
     line.attach_to(window)
     window.render()
-    window.get_next_mouse_click()
+    window.continue_on_mouse_click()
 
     circle.fill_color = rectangle.outline_color
     window.render()
-
 
 
 def run_test_problem2b():
@@ -202,26 +199,20 @@ def problem2b(rect, n, delta, win):
 
     rect.attach_to(win)
 
-    startx = rect.get_upper_left_corner().x
-    starty = rect.get_upper_left_corner().y
-    start = rg.Point(startx,starty)
+    corner_1 = rect.get_upper_left_corner()
+    corner_2 = rect.get_lower_right_corner()
 
-    endx = rect.get_lower_right_corner().x
-    endy = rect.get_lower_right_corner().y
-    end = rg.Point(endx,endy)
+    for k in range(n-1):
+        corner_1.x = corner_1.x - delta
+        corner_1.y =corner_1.y - delta
 
-    increment_x = rect.get_lower_right_corner().x + delta
-    for _ in range(n):
-        rect1 = rg.Rectangle(start,end)
-        rect1.attach_to(win)
-        win.render()
+        corner_2.x = corner_2.x + delta
+        corner_2.y = corner_2.y + delta
 
-        start.x = start.x -delta
-        start.y = start.y - delta
+        rect2 = rg.Rectangle(corner_1,corner_2)
+        rect2.attach_to(win)
 
-        end.x = end.x +delta
-        end.y = end.y + delta
-
+    win.render()
 
 
 # ----------------------------------------------------------------------
